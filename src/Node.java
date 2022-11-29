@@ -1,12 +1,12 @@
 public class Node {
-    int key;
     Node parent;
     Node left;
     Node right;
     int height;
     Node next;
-    public Node(int data){
-        this.key=data;
+    Product p;
+    public Node(Product data){
+        this.p=data;
         this.parent=null;
         this.left=null;
         this.right=null;

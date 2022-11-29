@@ -18,7 +18,7 @@ public class Product {
         this.ProductName = ProductName;
         this.size = size;
     }
-
+Product(){}
     @Override
     public String toString() {
         return " Package {" +

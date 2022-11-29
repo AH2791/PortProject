@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("\n---------------------------------------------");
-//        System.out.println("Welcome to BAU  System");
-//        System.out.println("---------------------------------------------");
-//        System.out.println("\n--Please log in to the system--");
-//
-//
-//
+        System.out.println("\n---------------------------------------------");
+        System.out.println("Welcome to BAU  System");
+        System.out.println("---------------------------------------------");
+        System.out.println("\n--Please log in to the system--");
+
+
+
 //        try{
 //            String Username= "admin";
 //            String Password= "123";
@@ -94,6 +94,9 @@ public class Main {
         if(n != null){
             System.out.println(n.data);
         }
+
+        BinarySearchTree b1 = new BinarySearchTree();
+
 
     }
 }
