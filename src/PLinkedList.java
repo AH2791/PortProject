@@ -31,25 +31,28 @@ public class PLinkedList {
         this.first = this.first.next;
         length--;
     }
-    public PNode searchByProduct(Product data, String name) {
-        PNode temp = new PNode(data);
-        while ( temp.next != null)
-        {
-            if (name.equalsIgnoreCase(temp.data.ProductName))
+    public PNode searchByProduct( String name) {
+        PNode temp = first;
+        while (temp.next != null) {
+            if (name.equalsIgnoreCase(temp.data.ProductName)) {
                 return temp;
+            }
+            temp = temp.next;
         }
-        return temp;
+        System.out.println("not found");
+        return null;
     }
 
-    public PNode searchByName(Product data, String name) {
-        PNode temp = new PNode(data);
-        while ( temp.next != null)
-        {
-            if (name.equalsIgnoreCase(temp.data.Receiver))
+    public PNode searchByReceiver( String receiver) {
+        PNode temp = first;
+        while (temp.next != null) {
+            if (receiver.equalsIgnoreCase(temp.data.Receiver)) {
                 return temp;
+            }
+            temp = temp.next;
         }
-        return temp;
+        System.out.println("not found!");
+        return null;
     }
-
 }
 

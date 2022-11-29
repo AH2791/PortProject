@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +9,9 @@ public class Main {
         System.out.println("Welcome to BAU  System");
         System.out.println("---------------------------------------------");
         System.out.println("\n--Please log in to the system--");
+
+
+
         try{
             String Username= "admin";
             String Password= "123";
@@ -45,7 +51,7 @@ public class Main {
                 ch = sc.nextInt();
                 switch(ch){
                     case 1: System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room \n4.Deluxe Single Room\n");
-                        
+
                         break;
                     case 2:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
 
@@ -77,6 +83,17 @@ public class Main {
         catch(Exception e){
             System.out.println("Not a valid input");
         }
-    }
+
+        PLinkedList l = new PLinkedList();
+
+        l.insertAtFront(new Product("wow","fa","ahmad"));
+        l.insertAtFront(new Product("fa","fa","mounzer"));
+        l.insertAtFront(new Product("tr","fa","mh"));
+
+        PNode n = l.searchByProduct("arewg");
+        if(n != null){
+            System.out.println(n.data.ProductName+" is found");
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 public class LinkedList {
-    static Node head;  //head of the linked list. i.e first element.
-    static int size;   //number of elements in the list.
+    static Node head;
+    static int size;
 
 
     public LinkedList(){
@@ -8,7 +8,6 @@ public class LinkedList {
         size=0;
     }
 
-    //function to add elements at the front of the list.
     static public void pushFront(int number){
         System.out.println("Inserting node at front : " + number);
         Node node = new Node(number);
@@ -23,7 +22,6 @@ public class LinkedList {
         size++;
     }
 
-    //function to add elements at the back of the list.
     static public void pushBack(int number){
         System.out.println("Inserting node at back  : " + number);
         Node node = new Node(number);
@@ -40,7 +38,6 @@ public class LinkedList {
         size++;
     }
 
-    //function to remove element from the front of the list.
     static public void popFront(){
         System.out.println("PopFront Operation.");
         if(head==null){
@@ -51,7 +48,6 @@ public class LinkedList {
         size--;
     }
 
-    //function to remove elements from the back of the list.
     static public void popBack(){
         System.out.println("PopBack Operation.");
         if(head==null){
@@ -72,7 +68,6 @@ public class LinkedList {
         size--;
     }
 
-    //function to remove element at a specific position.
     static public void pop(int position){
         System.out.println("Poping element at pos : " + position);
         if(head==null){
@@ -101,7 +96,6 @@ public class LinkedList {
         size--;
     }
 
-    //function to display the list.
     static public void display(){
         System.out.print("LinkedList : ");
         if(head==null){
@@ -115,29 +109,5 @@ public class LinkedList {
             temp=temp.next;
         }
         System.out.println();
-    }
-
-    //main functon to run the program.
-    public static void main(String [] args){
-        LinkedList list = new LinkedList();
-        list.pushFront(10);
-        list.pushBack(12);
-
-        list.display();
-
-        list.pushFront(8);
-        list.pushFront(6);
-        list.pushBack(20);
-
-        list.display();
-
-        list.pop(3);
-        list.display();
-
-        list.popFront();
-        list.display();
-
-        list.popBack();
-        list.display();
     }
 }
