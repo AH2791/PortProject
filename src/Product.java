@@ -15,17 +15,17 @@ public class Product {
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         this.date = formatter.format(getdate);
         this.Receiver = Receiver;
-        this.size = size;
         this.ProductName = ProductName;
+        this.size = size;
     }
 
     @Override
     public String toString() {
-        return "Product{" +
-                "date='" + date + '\'' +
-                ", size='" + size + '\'' +
-                ", Receiver='" + Receiver + '\'' +
-                ", ProductName='" + ProductName + '\'' +
+        return " Package {" +
+                " Receiver :'" + Receiver + '\'' +
+                ", ProductName :'" + ProductName + '\'' +
+                ", size :'" + size + '\'' +
+                ", date :'" + date + '\'' +
                 '}';
     }
 }
