@@ -2,6 +2,7 @@ public class PLinkedList {
 
     PNode first;
     int length;
+    private int currentNb;
     public PLinkedList() {
 
     }
@@ -29,6 +30,25 @@ public class PLinkedList {
         }
         this.first = this.first.next;
         length--;
+    }
+    public PNode searchByProduct(Product data, String name) {
+        PNode temp = new PNode(data);
+        while ( temp.next != null)
+        {
+            if (name.equalsIgnoreCase(temp.data.ProductName))
+                return temp;
+        }
+        return temp;
+    }
+
+    public PNode searchByName(Product data, String name) {
+        PNode temp = new PNode(data);
+        while ( temp.next != null)
+        {
+            if (name.equalsIgnoreCase(temp.data.Receiver))
+                return temp;
+        }
+        return temp;
     }
 
 }

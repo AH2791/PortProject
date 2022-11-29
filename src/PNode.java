@@ -1,8 +1,6 @@
 public class PNode {
-
-    PNode next;
     Product data;
-
+    PNode next;
     public PNode(Product data) {
         this.data = data;
     }
