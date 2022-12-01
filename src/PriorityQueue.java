@@ -35,10 +35,10 @@ public class PriorityQueue {
         Product P2 = array[indexofnumtoSift*2+1];
         while(indexofnumtoSift<=(indexuptosiftDown-1)/2){
             int maxIndex=indexofnumtoSift;
-            if(indexofnumtoSift*2+1<=indexuptosiftDown && P1.ProductName.compareToIgnoreCase(P2.ProductName)<0){
+            if(indexofnumtoSift*2+1<=indexuptosiftDown && P1.Receiver.compareToIgnoreCase(P2.Receiver)<0){
                 maxIndex=indexofnumtoSift*2+1;
             }
-            if(indexofnumtoSift*2+2<=indexuptosiftDown && array[maxIndex].ProductName.compareToIgnoreCase(array[indexofnumtoSift*2+2].ProductName)<0){
+            if(indexofnumtoSift*2+2<=indexuptosiftDown && array[maxIndex].Receiver.compareToIgnoreCase(array[indexofnumtoSift*2+2].Receiver)<0){
                 maxIndex=indexofnumtoSift*2+2;
             }
             if(maxIndex!=indexofnumtoSift){
@@ -86,7 +86,7 @@ public class PriorityQueue {
     //this function changes the priority and sift the element up or down according to newValue of element.//
     public void changePriority(int indexofElement, Product newp){
         System.out.println("Change Priority Operation. Index = " + indexofElement + " New Value = " + newp);
-        if(array[indexofElement].ProductName.compareToIgnoreCase(newp.ProductName)>0){
+        if(array[indexofElement].Receiver.compareToIgnoreCase(newp.Receiver)>0){
             array[indexofElement]=newp;
             siftDown(indexofElement,addPointer-1);
         }
