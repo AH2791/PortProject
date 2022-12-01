@@ -96,7 +96,10 @@ public class Main {
         }
 
         BinarySearchTree b1 = new BinarySearchTree();
-
+        b1.insert(new Product("Ahmad","slim","Lenovo Laptop"));
+        b1.insert(new Product("Mounzer","BIGG","RTX 4090"));
+        b1.insert(new Product("Samir","small","HP PC"));
+        b1.insert(new Product("baker","huge","KNIFE"));
 
     }
 }

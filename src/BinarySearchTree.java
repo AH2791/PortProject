@@ -13,7 +13,7 @@ public class BinarySearchTree {
     }
 
     public Node Search(Product p) {
-        return SearchHelper(root, p)
+        return SearchHelper(root, p);
     }
 
     private Node SearchHelper(Node root, Product p) {
@@ -29,28 +29,30 @@ public class BinarySearchTree {
         }
     }
 
-    public void insert(int data) {
-        System.out.println("Inserting data : " + data);
-        Node node = new Node(data);
-        Node parent = find(data);
-        if (parent == null) {
-            root = node;
+    public void insert(Product p){
+        System.out.println("Inserting data : " + p);
+        Node n = new Node(p);
+        Node parent = Search(p);
+        if(parent == null){
+            root = n;
             return;
         }
-        node.parent = parent;
-        node.height = node.parent.height + 1;
+        n.parent = parent;
+        n.height = n.parent.height + 1;
         size++;
 
-        if (data > parent.key) {
-            parent.right = node;
-        } else {
-            parent.left = node;
+        if (n.p.Receiver.compareToIgnoreCase(root.p.Receiver) < 0){
+            parent.right = n;
+        }
+        else {
+            parent.left = n;
         }
     }
 
-    public Node findNext(int data) {
-        Node temp = find(data);
-        if (temp.key != data) {
+
+    public Node findNext(Product data) {
+        Node temp = Search(data);
+        if (temp.p != data) {
             System.out.println(data + " not present in the tree.");
             return null;
         }
@@ -73,7 +75,7 @@ public class BinarySearchTree {
 
     public void delete(int data) {
         System.out.println("Remove  : " + data);
-        Node temp = find(data);
+        Node temp = Search(data);
         if (temp.key != data) {
             System.out.println(data + " is not present in the tree.");
             return;
