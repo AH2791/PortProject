@@ -26,14 +26,14 @@ public class Queue {
         }
         this.queue.head=removed.queue.head;
     }
-    public int minElement(){
+    public String PriorityElement(){
         Queue temp = new Queue();
         Node min =queue.head;
         Node n = queue.head;
         while(!queue.isEmpty()){
             Node current = Dequeue();
             temp.Enqueue(current.data, current.priority);
-            if(current.data< min.data){
+            if(current.data.ProductName.compareToIgnoreCase(min.data.ProductName)< 0 ){
                 min = current;
             }
         }
@@ -41,7 +41,7 @@ public class Queue {
             Node current = temp.Dequeue();
             Enqueue(current.data, current.priority);
         }
-        return min.data;
+        return min.data.ProductName;
     }
 
     public void display(){
