@@ -49,13 +49,13 @@ public class BinarySearchTree {
 
     private Node insertRec(Node root, Product data) {
 
-        Object Node1 = new
+        Node Node1 = new Node(data);
         if (root == null) {
             root = new Node(data);
             return root;
-        } else if (Node1.data.ProductName.CompareToIgnoreCases(Node2.data.ProductName) < 0) {
+        } else if (Node1.data.ProductName.compareToIgnoreCase(root.data.ProductName) < 0) {
             root.left = insertRec(root.left, data);
-        } else if ((Node1.data.ProductName.CompareToIgnoreCases(Node2.data.ProductName) > 0)) {
+        } else if (Node1.data.ProductName.compareToIgnoreCase(root.data.ProductName) > 0) {
             root.right = insertRec(root.right, data);
         }
         return root;
