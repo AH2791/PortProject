@@ -4,9 +4,9 @@ public class Node {
     Node right;
     int height;
     Node next;
-    Product p;
+    Product data;
     public Node(Product data){
-        this.p=data;
+        this.data=data;
         this.parent=null;
         this.left=null;
         this.right=null;

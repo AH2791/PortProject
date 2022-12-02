@@ -12,71 +12,44 @@ public class BinarySearchTree {
         this.root = null;
     }
 
-    public Node Search(Product p) {
-        return SearchHelper(root, p);
+    public Node Search(Product data) {
+        return SearchHelper(root, data);
     }
 
-    private Node SearchHelper(Node root, Product p) {
-        Node n = new Node(p);
+    private Node SearchHelper(Node root, Product data) {
+        Node n = new Node(data);
         if (root == null) {
             return null;
-        } else if (n.p.Receiver.compareToIgnoreCase(root.p.Receiver) < 0) {
-            return SearchHelper(root.left, p);
-        } else if (n.p.Receiver.compareToIgnoreCase(root.p.Receiver) > 0) {
-            return SearchHelper(root.right, p);
+        } else if (n.data.Receiver.compareToIgnoreCase(root.data.Receiver) < 0) {
+            return SearchHelper(root.left, data);
+        } else if (n.data.Receiver.compareToIgnoreCase(root.data.Receiver) > 0) {
+            return SearchHelper(root.right, data);
         } else {
             return null;
         }
     }
 
-    public void insert(Product p){
-        System.out.println("Inserting data : " + p);
-        Node n = new Node(p);
-        Node parent = Search(p);
-        if(parent == null){
-            root = n;
-            return;
-        }
-        n.parent = parent;
-        n.height = n.parent.height + 1;
-        size++;
-
-        if (n.p.Receiver.compareToIgnoreCase(root.p.Receiver) < 0){
-            parent.right = n;
-        }
-        else {
-            parent.left = n;
-        }
+    public void insert(Product data) {
+        root = insertRec(root, data);
     }
 
+    private Node insertRec(Node root, Product data) {
 
-    public Node findNext(Product data) {
-        Node temp = Search(data);
-        if (temp.p != data) {
-            System.out.println(data + " not present in the tree.");
-            return null;
+        Node Node1 = new Node(data);
+        if (root == null) {
+            root = new Node(data);
+            return root;
+        } else if (Node1.ProductName.CompareToIgnoreCases(Node2.ProductName) < 0) {
+            root.left = insertRec(root.left, data);
+        } else if ((Node1.ProductName.CompareToIgnoreCases(Node2.ProductName) > 0)) {
+            root.right = insertRec(root.right, data);
         }
-        Node right = temp.right;
-        Node parent = temp.parent;
-        if (right != null) {
-            while (right.left != null) {
-                right = right.left;
-            }
-            return right;
-        }
-        while (parent != null) {
-            if (parent.key > temp.key) {
-                return parent;
-            }
-            parent = parent.parent;
-        }
-        return temp;
+        return root;
     }
 
-    public void delete(int data) {
-        System.out.println("Remove  : " + data);
+    public void delete(Product data) {
         Node temp = Search(data);
-        if (temp.key != data) {
+        if (temp.data != data) {
             System.out.println(data + " is not present in the tree.");
             return;
         }
@@ -102,39 +75,5 @@ public class BinarySearchTree {
                 return;
             }
         }
-        Node nextTemp = findNext(temp.key);
-        if (nextTemp.right != null) {
-            nextTemp.right.parent = nextTemp.parent;
-        }
-        if (nextTemp.parent == null) {
-            root = nextTemp.right;
-        }
-        if (nextTemp.parent != null && nextTemp.parent.left == nextTemp) {
-            nextTemp.parent.left = nextTemp.right;
-        }
-        if (nextTemp.parent != null && nextTemp.parent.right == nextTemp) {
-            nextTemp.parent.right = nextTemp.right;
-        }
-        if (temp.left != null) {
-            temp.left.parent = nextTemp;
-        }
-        if (temp.right != null) {
-            temp.right.parent = nextTemp;
-        }
-        nextTemp.left = temp.left;
-        nextTemp.right = temp.right;
-        nextTemp.parent = temp.parent;
-        if (temp.parent == null) {
-            root = nextTemp;
-            temp = null;
-            return;
-        }
-        if (temp.parent.right == temp) {
-            temp.parent.right = nextTemp;
-            temp = null;
-            return;
-        }
-        temp.parent.left = nextTemp;
-        temp = null;
     }
 }
