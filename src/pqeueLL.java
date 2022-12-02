@@ -16,13 +16,12 @@ public class pqeueLL {
         return head;
     }
 
-    static Node push(Node head, Product ddata, int priority)
+    static Node push(Node head, Product data, int priority)
     {
         Node start = (head);
 
         // Create new Node
         Node temp = newNode(data, priority);
-        
         if ((head).priority > priority) {
 
             // Insert New Node before head
