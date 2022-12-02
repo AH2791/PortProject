@@ -14,4 +14,8 @@ public class Node {
         this.right=null;
         this.height=0;
     }
+
+    public Node(Product data){
+        this.data=data;
+    }
 }

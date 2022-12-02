@@ -1,113 +1,64 @@
 public class LinkedList {
-    static Node head;
-    static int size;
+    Node head;
 
-
-    public LinkedList(){
-        head=null;
-        size=0;
+    public boolean isEmpty(){
+        return head==null;
     }
-
-    static public void pushFront(int number){
-        System.out.println("Inserting node at front : " + number);
-        Node node = new Node(number);
-        if(head==null){
-            head=node;
-            size++;
+    public void insertAtBack(Product data){
+        Node n=new Node(data);
+        if(isEmpty()){
+            head=n;
+        }
+        else{
+            Node temp=head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=n;
+        }
+    }
+    public void insertAtFront(Product data,int proirity){
+        Node n=new Node(data,proirity);
+        if(isEmpty()){
+            head=n;
             return;
         }
-
-        node.next=head;
-        head=node;
-        size++;
+        n.next=head;
+        head=n;
     }
-
-    static public void pushBack(int number){
-        System.out.println("Inserting node at back  : " + number);
-        Node node = new Node(number);
-        if(head==null){
-            head=node;
-            size++;
-            return;
+    public void priorityEnqueue(Product a,int priority){
+        Node n=new Node(a,priority);
+        if(isEmpty()){
+            insertAtFront(a,priority);
         }
-        Node temp=head;
-        while(temp.next!=null){
-            temp=temp.next;
+        else if(head.priority>priority){
+            n.next=head;
+            head=n;
         }
-        temp.next=node;
-        size++;
+        else{
+            Node temp=head;
+            while(temp.next!=null && temp.next.priority<priority){
+                temp=temp.next;
+            }
+            n.next=temp.next;
+            temp.next=n;
+        }
     }
+    public void removeElement(int a){
 
-    static public void popFront(){
-        System.out.println("PopFront Operation.");
-        if(head==null){
-            return;
-        }
 
+    }
+    public Node deleteFromFront(){
+        Node n=head;
         head=head.next;
-        size--;
+        return n;
+    }
+    public void display(){
+        Node n=head;
+        while(n!=null){
+            System.out.print(n.data+" ");
+            n=n.next;
+        }
     }
 
-    static public void popBack(){
-        System.out.println("PopBack Operation.");
-        if(head==null){
-            return;
-        }
-
-        if(head.next==null){
-            head=null;
-            size--;
-            return;
-        }
-
-        Node temp=head;
-        while(temp.next.next!=null){
-            temp=temp.next;
-        }
-        temp.next=null;
-        size--;
-    }
-
-    static public void pop(int position){
-        System.out.println("Poping element at pos : " + position);
-        if(head==null){
-            return;
-        }
-        if(position==0){
-            head=head.next;
-            size--;
-            return;
-        }
-
-        Node temp=head;
-        int x=0;
-        while(temp.next!=null && x<position-1){
-            temp=temp.next;
-            x++;
-        }
-
-
-
-        if(temp.next==null){
-            return;
-        }
-
-        temp.next=temp.next.next;
-        size--;
-    }
-
-    static public void display(){
-        System.out.print("LinkedList : ");
-        if(head==null){
-            System.out.println(" ");
-            return;
-        }
-
-        Node temp=head;
-        while(temp!=null){
-            System.out.print(temp.key +  " ");
-            temp=temp.next;
-        }
-        System.out.println();
-    }
 }

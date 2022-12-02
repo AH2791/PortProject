@@ -10,7 +10,6 @@ public class Product {
     String ProductName;
 
     public Product(String Receiver, String size,  String ProductName) {
-        //something unnecessary but fun to know:
         Date getdate = Calendar.getInstance().getTime();
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         this.date = formatter.format(getdate);
