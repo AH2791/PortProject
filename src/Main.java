@@ -44,7 +44,8 @@ public class Main{
             }
             Scanner sc = new Scanner(System.in);
             int ch;
-            container ch2;
+            container ch2 = new container();
+            int ch3;
             char wish;
             x:
             do{
@@ -53,6 +54,7 @@ public class Main{
                 switch(ch){
 
                     case 1:
+                        ch3 = sc.nextInt();
                         PortManagement.add(ch2,ch3);
 
                         break;

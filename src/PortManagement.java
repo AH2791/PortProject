@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class PortManagement {
-    static BinarySearchTree BST ;
-    static LinkedList L;
-    static Product ob=new Product();
+    BinarySearchTree BST ;
+    LinkedList L;
+    Product ob=new Product();
     static void Details(int i,int rn) {
         Scanner sc = new Scanner(System.in);
         String name;
