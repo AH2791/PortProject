@@ -1,9 +1,9 @@
-public class Queue {
+public class PQueue {
     LinkedList queue;
-    public Queue(LinkedList queue){
+    public PQueue(LinkedList queue){
         this.queue=queue;
     }
-    public Queue(){
+    public PQueue(){
         this.queue=new LinkedList();
     }
     public void Enqueue(container data,int priority){
@@ -14,7 +14,7 @@ public class Queue {
         return a;
     }
     public void removeElement(container a){
-        Queue removed=new Queue();
+        PQueue removed=new PQueue();
         while(!queue.isEmpty()){
             Node temp=Dequeue();
             if(a==temp.data){
@@ -27,7 +27,7 @@ public class Queue {
         this.queue.head=removed.queue.head;
     }
     public String PriorityElement(){
-        Queue temp = new Queue();
+        PQueue temp = new PQueue();
         Node min =queue.head;
         Node n = queue.head;
         while(!queue.isEmpty()){

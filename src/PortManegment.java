@@ -1,10 +1,11 @@
+import java.util.Queue;
 import java.util.Scanner;
 
-public class PortManegment {
-
+public class PortManegmen{
+    static BinarySearchTree BST ;
+    static LinkedList L;
     static Product ob=new Product();
     static void Details(int i,int rn) {
-
         Scanner sc = new Scanner(System.in);
         String name;
         String ProductName;
@@ -25,5 +26,22 @@ public class PortManegment {
             default:System.out.println("Wrong option");
                 break;
         }
+    }
+    public static void add(container a, int priority){
+        BST.insert(a);
+        L.insertAtFront(a , priority);
+    }
+    public static void delete(container c){
+        BST.delete(c);
+        L.deleteFromFront();
+    }
+    public static void Display() {
+        L.display();
+    }
+    public static void SearchProduct(container data){
+        BST.SearchProduct(data);
+    }
+    public static void SearchName(container data){
+        BST.SearchClient(data);
     }
 }

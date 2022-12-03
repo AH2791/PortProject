@@ -3,7 +3,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends PortManegmen{
     public static void main(String[] args) {
         System.out.println("\n---------------------------------------------");
         System.out.println("Welcome to BAU  System");
@@ -40,30 +40,32 @@ public class Main {
             if(f.exists()){
                 FileInputStream fin=new FileInputStream(f);
                 ObjectInputStream ois=new ObjectInputStream(fin);
-                PortManegment.ob=(Product)ois.readObject();
+                PortManegmen.ob=(Product)ois.readObject();
             }
             Scanner sc = new Scanner(System.in);
-            int ch,ch2;
+            int ch;
+            container ch2;
             char wish;
             x:
             do{
                 System.out.println("\nEnter your choice :\n1.Add item\n2.Take item \n3.Display items\n4.Search by items\n5.Search by costumers\n6.Exit\n");
                 ch = sc.nextInt();
                 switch(ch){
+
                     case 1:
-                    PortManegment.add(ch2);
+                        PortManegmen.add(ch2,ch3);
 
                         break;
-                    case 2:PortManegment.delete(ch2);;
+                    case 2:PortManegmen.delete(ch2);;
 
                         break;
-                    case 3:PortManegment.Display(ch2);;
+                    case 3:PortManegmen.Display();;
 
                         break;
-                    case 4:PortManegment.SearchProduct(ch2);
+                    case 4:PortManegmen.SearchProduct(ch2);
 
                         break;
-                    case 5:PortManegment.SearchName(ch2);
+                    case 5:PortManegmen.SearchName(ch2);
 
                         break;
 
@@ -78,7 +80,7 @@ public class Main {
                 }
             }
             while(wish=='y'||wish=='Y');
-            Thread t=new Thread(new write(PortManegment.ob));
+            Thread t=new Thread(new write(PortManegmen.ob));
             t.start();
         }
         catch(Exception e){

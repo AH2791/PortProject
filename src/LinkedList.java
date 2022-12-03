@@ -17,8 +17,8 @@ public class LinkedList {
             temp.next=n;
         }
     }
-    public void insertAtFront(container data,int proirity){
-        Node n=new Node(data,proirity);
+    public void insertAtFront(container data,int priority){
+        Node n=new Node(data,priority);
         if(isEmpty()){
             head=n;
             return;
