@@ -13,6 +13,7 @@ public class PortManagement {
         name = sc.next();
         System.out.print("\nEnter Product Name: ");
         ProductName = sc.next();
+        int priority = sc.nextInt();
         switch (i){
             case 1:ob.arr1[rn]=new container(name,ProductName,priority);
                 break;
