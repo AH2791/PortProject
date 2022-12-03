@@ -4,7 +4,7 @@ public class PortManagement {
     static Scanner sc = new Scanner(System.in);
     static BinarySearchTree BST ;
     static LinkedList L;
-    static Product ob=new Product();
+    static CList ob=new CList();
     static void Details(int i,int rn) {
         Scanner sc = new Scanner(System.in);
         String name;
@@ -12,7 +12,7 @@ public class PortManagement {
         System.out.print("\n--Please fill in customer details--\n");
         System.out.print("\nEnter customer name: ");
         name = sc.next();
-        System.out.print("\nEnter Product Name: ");
+        System.out.print("\nEnter CList Name: ");
         ProductName = sc.next();
         switch (i){
             case 1:ob.arr1[rn]=new container(name,ProductName);

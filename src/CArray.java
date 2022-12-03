@@ -1,6 +1,6 @@
-public class Queues {
+public class CArray {
     Node first;
-    public Queues(){
+    public CArray(){
         first=null;
     }
     public boolean isEmpty(){
@@ -29,7 +29,7 @@ public class Queues {
         if(isEmpty()){
             return;
         }
-        Queues temp = new Queues();
+        CArray temp = new CArray();
         while(!isEmpty()){
             Node t = dequeue();
             temp.enqueue(t.data);

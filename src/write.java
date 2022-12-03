@@ -2,8 +2,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 class write implements Runnable{
-    Product ob;
-    write(Product ob){
+    CList ob;
+    write(CList ob){
         this.ob=ob;
     }
     @Override

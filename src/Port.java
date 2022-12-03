@@ -3,7 +3,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Scanner;
 
-public class Main{
+public class Port {
     public static void main(String[] args) {
         System.out.println("\n---------------------------------------------");
         System.out.println("Welcome to BAU  System");
@@ -40,7 +40,7 @@ public class Main{
             if(f.exists()){
                 FileInputStream fin=new FileInputStream(f);
                 ObjectInputStream ois=new ObjectInputStream(fin);
-                PortManagement.ob=(Product)ois.readObject();
+                PortManagement.ob=(CList)ois.readObject();
             }
             Scanner sc = new Scanner(System.in);
             int ch,ch3;
