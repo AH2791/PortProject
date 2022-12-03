@@ -21,7 +21,7 @@ public class Queues {
         if(isEmpty()){
             return null;
         }
-        Node a = Node.clone(first); //to avoid potential copying of reference
+        Node a = Node.clone(first);
         first=a.next;
         return a;
     }

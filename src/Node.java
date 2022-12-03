@@ -6,15 +6,18 @@ public class Node {
     int priority;
     Node next;
     container data;
-    public Node(){
-        this.parent=null;
-        this.left=null;
-        this.right=null;
-        this.height=0;
+
+    public Node() {
+        this.parent = null;
+        this.left = null;
+        this.right = null;
+        this.height = 0;
     }
-    public Node(container data){
-        this.data=data;
+
+    public Node(container data) {
+        this.data = data;
     }
+
     public void display() {
         if (next == null) {
             System.out.println(data);
@@ -22,6 +25,8 @@ public class Node {
         }
         System.out.print(data + "--> ");
     }
-    public static Node clone(Node a){
+
+    public static Node clone(Node a) {
         return a;
+    }
 }

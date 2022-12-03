@@ -43,9 +43,8 @@ public class Main{
                 PortManagement.ob=(Product)ois.readObject();
             }
             Scanner sc = new Scanner(System.in);
-            int ch;
+            int ch,ch3;
             container ch2 = new container();
-            int ch3;
             char wish;
             x:
             do{
@@ -55,7 +54,7 @@ public class Main{
 
                     case 1:
                         ch3 = sc.nextInt();
-                        PortManagement.add(ch2);
+                        PortManagement.add(ch2,ch3);
 
                         break;
                     case 2:
