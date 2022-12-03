@@ -10,7 +10,7 @@ public class Main {
         System.out.println("---------------------------------------------");
         System.out.println("\n--Please log in to the system--");
 
-
+        LinkedList queue=new LinkedList();
 
         try{
             String Username= "admin";
@@ -40,7 +40,7 @@ public class Main {
             if(f.exists()){
                 FileInputStream fin=new FileInputStream(f);
                 ObjectInputStream ois=new ObjectInputStream(fin);
-                Hotel.ob=(holder)ois.readObject();
+                PortManegment.ob=(Product)ois.readObject();
             }
             Scanner sc = new Scanner(System.in);
             int ch,ch2;
@@ -50,19 +50,20 @@ public class Main {
                 System.out.println("\nEnter your choice :\n1.Add item\n2.Take item \n3.Display items\n4.Search by items\n5.Search by costumers\n6.Exit\n");
                 ch = sc.nextInt();
                 switch(ch){
-                    case 1: System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room \n4.Deluxe Single Room\n");
+                    case 1:
+                    PortManegment.add(ch2);
 
                         break;
-                    case 2:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
+                    case 2:PortManegment.delete(ch2);;
 
                         break;
-                    case 3:System.out.println("\nChoose room type :\n1.Luxury Double Room \n2.Deluxe Double Room \n3.Luxury Single Room\n4.Deluxe Single Room\n");
+                    case 3:PortManegment.Display(ch2);;
 
                         break;
-                    case 4:
+                    case 4:PortManegment.SearchProduct(ch2);
 
                         break;
-                    case 5:
+                    case 5:PortManegment.SearchName(ch2);
 
                         break;
 
@@ -77,7 +78,7 @@ public class Main {
                 }
             }
             while(wish=='y'||wish=='Y');
-            Thread t=new Thread(new write(Hotel.ob));
+            Thread t=new Thread(new write(PortManegment.ob));
             t.start();
         }
         catch(Exception e){

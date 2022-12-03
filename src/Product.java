@@ -1,31 +1,13 @@
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Product {
-    String date;
-    String size;
-    String Receiver;
-    String ProductName;
-
-    public Product(String Receiver, String ProductName, String size) {
-        Date getdate = Calendar.getInstance().getTime();
-        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        this.date = formatter.format(getdate);
-        this.Receiver = Receiver;
-        this.ProductName = ProductName;
-        this.size = size;
-    }
-Product(){}
-    @Override
-    public String toString() {
-        return " Package {" +
-                " Receiver :'" + Receiver + '\'' +
-                ", ProductName :'" + ProductName + '\'' +
-                ", size :'" + size + '\'' +
-                ", date :'" + date + '\'' +
-                '}';
-    }
+    container arr1[]=new container[10];
+    container arr2[]=new container[10];
+    container arr3[]=new container[10];
+    container arr4[]=new container[10];
 }
 
