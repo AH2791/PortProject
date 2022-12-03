@@ -4,7 +4,7 @@ public class LinkedList {
     public boolean isEmpty(){
         return head==null;
     }
-    public void insertAtBack(Product data){
+    public void insertAtBack(container data){
         Node n=new Node(data);
         if(isEmpty()){
             head=n;
@@ -17,7 +17,7 @@ public class LinkedList {
             temp.next=n;
         }
     }
-    public void insertAtFront(Product data,int proirity){
+    public void insertAtFront(container data,int proirity){
         Node n=new Node(data,proirity);
         if(isEmpty()){
             head=n;
