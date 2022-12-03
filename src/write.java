@@ -2,7 +2,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 class write implements Runnable{
-    holder ob;
+    Product ob;
     write(Product ob){
         this.ob=ob;
     }
