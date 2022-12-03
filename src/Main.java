@@ -3,7 +3,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Scanner;
 
-public class Main extends PortManegmen{
+public class Main{
     public static void main(String[] args) {
         System.out.println("\n---------------------------------------------");
         System.out.println("Welcome to BAU  System");
@@ -40,7 +40,7 @@ public class Main extends PortManegmen{
             if(f.exists()){
                 FileInputStream fin=new FileInputStream(f);
                 ObjectInputStream ois=new ObjectInputStream(fin);
-                PortManegmen.ob=(Product)ois.readObject();
+                PortManagement.ob=(Product)ois.readObject();
             }
             Scanner sc = new Scanner(System.in);
             int ch;
@@ -53,19 +53,23 @@ public class Main extends PortManegmen{
                 switch(ch){
 
                     case 1:
-                        PortManegmen.add(ch2,ch3);
+                        PortManagement.add(ch2,ch3);
 
                         break;
-                    case 2:PortManegmen.delete(ch2);;
+                    case 2:
+                        PortManagement.delete(ch2);
 
                         break;
-                    case 3:PortManegmen.Display();;
+                    case 3:
+                        PortManagement.Display();
 
                         break;
-                    case 4:PortManegmen.SearchProduct(ch2);
+                    case 4:
+                        PortManagement.SearchProduct(ch2);
 
                         break;
-                    case 5:PortManegmen.SearchName(ch2);
+                    case 5:
+                        PortManagement.SearchName(ch2);
 
                         break;
 
@@ -80,7 +84,7 @@ public class Main extends PortManegmen{
                 }
             }
             while(wish=='y'||wish=='Y');
-            Thread t=new Thread(new write(PortManegmen.ob));
+            Thread t=new Thread(new write(PortManagement.ob));
             t.start();
         }
         catch(Exception e){
