@@ -2,52 +2,52 @@
 public class BinarySearchTree {
     int size;
     Node root;
-    Product product;
+    container container;
 
     public BinarySearchTree() {
-        product = new Product();
+        container = new container();
         this.size = 0;
         this.root = null;
     }
 
-    public Node SearchClient(Product data) {
+    public Node SearchClient(container data) {
         return SearchHelper(root, data);
     }
 
-    private Node SearchHelper(Node root, Product data) {
+    private Node SearchHelper(Node root, container data) {
         Node n = new Node(data);
         if (root == null) {
             return null;
-        } else if (n.data.Receiver.compareToIgnoreCase(root.data.Receiver) < 0) {
+        } else if (n.data.name.compareToIgnoreCase(root.data.name) < 0) {
             return SearchHelper(root.left, data);
-        } else if (n.data.Receiver.compareToIgnoreCase(root.data.Receiver) > 0) {
+        } else if (n.data.name.compareToIgnoreCase(root.data.name) > 0) {
             return SearchHelper(root.right, data);
         } else {
             return null;
         }
     }
 
-    public Node SearchProduct(Product data) {
+    public Node SearchProduct(container data) {
         return SearchProductHelper(root, data);
     }
 
-    private Node SearchProductHelper(Node root, Product data) {
+    private Node SearchProductHelper(Node root, container data) {
         Node n = new Node(data);
         if (root == null) {
             return null;
-        } else if (n.data.ProductName.compareToIgnoreCase(root.data.Receiver) < 0) {
+        } else if (n.data.ProductName.compareToIgnoreCase(root.data.name) < 0) {
             return SearchHelper(root.left, data);
-        } else if (n.data.ProductName.compareToIgnoreCase(root.data.Receiver) > 0) {
+        } else if (n.data.ProductName.compareToIgnoreCase(root.data.name) > 0) {
             return SearchHelper(root.right, data);
         } else {
             return null;
         }
     }
-    public void insert(Product data) {
+    public void insert(container data) {
         root = insertRec(root, data);
     }
 
-    private Node insertRec(Node root, Product data) {
+    private Node insertRec(Node root, container data) {
 
         Node Node1 = new Node(data);
         if (root == null) {
@@ -60,7 +60,7 @@ public class BinarySearchTree {
         }
         return root;
     }
-    public void delete(Product data) {
+    public void delete(container data) {
         Node temp = SearchProduct(data);
         if (temp.data != data) {return;}
         if (temp.right == null) {

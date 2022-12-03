@@ -5,8 +5,8 @@ public class Node {
     int height;
     int priority;
     Node next;
-    Product data;
-    public Node(Product data,int priority ){
+    container data;
+    public Node(container data,int priority ){
         this.data=data;
         this.priority=priority;
         this.parent=null;
@@ -15,7 +15,7 @@ public class Node {
         this.height=0;
     }
 
-    public Node(Product data){
+    public Node(container data){
         this.data=data;
     }
 }

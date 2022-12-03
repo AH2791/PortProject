@@ -7,4 +7,8 @@ public class container {
         this.ProductName=ProductName;
         this.priority=priority;
     }
+
+    public container() {
+
+    }
 }
