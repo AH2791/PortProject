@@ -9,7 +9,7 @@ public class Product {
     String Receiver;
     String ProductName;
 
-    public Product(String Receiver, String size,  String ProductName) {
+    public Product(String Receiver, String ProductName, String size) {
         Date getdate = Calendar.getInstance().getTime();
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         this.date = formatter.format(getdate);
