@@ -26,7 +26,7 @@ public class LinkedList {
         n.next=head;
         head=n;
     }
-    public void priorityEnqueue(Product a,int priority){
+    public void priorityEnqueue(container a, int priority){
         Node n=new Node(a,priority);
         if(isEmpty()){
             insertAtFront(a,priority);

@@ -6,14 +6,14 @@ public class Queue {
     public Queue(){
         this.queue=new LinkedList();
     }
-    public void Enqueue(Product data,int priority){
+    public void Enqueue(container data,int priority){
         queue.priorityEnqueue(data,priority);
     }
     public Node Dequeue(){
         Node a= queue.deleteFromFront();
         return a;
     }
-    public void removeElement(Product a){
+    public void removeElement(container a){
         Queue removed=new Queue();
         while(!queue.isEmpty()){
             Node temp=Dequeue();
