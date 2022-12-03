@@ -27,9 +27,9 @@ public class PortManagement {
                 break;
         }
     }
-    public static void add(container a, int priority){
+    public static void add(container a){
         BST.insert(a);
-        L.insertAtFront(a , priority);
+        L.insertAtFront(a);
     }
     public static void delete(container c){
         BST.delete(c);

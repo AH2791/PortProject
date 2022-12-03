@@ -55,7 +55,7 @@ public class Main{
 
                     case 1:
                         ch3 = sc.nextInt();
-                        PortManagement.add(ch2,ch3);
+                        PortManagement.add(ch2);
 
                         break;
                     case 2:
